@@ -5,7 +5,7 @@ I did my best to follow best practices where necessary; however, since it was a 
 First it would be best to have an Application Config service to allow settings to be changed without recompilation and to keep things clean and organized (I.e. ServiceURL, endpoint paths, and other things subject to change).  
 Second Bootstrap is currently included by a CDN, it would be best to do this with a minified version to be included in the resource files.
 
-###Main Files for the Application
+#### Main Files for the Application
 
 1.  DataController - Makes HTTP REST calls to get data.  Components subscribe to receive data from it.  Can be found in the ~/src/services/ folder.
 2.	Main.Component - Single View that displays data.  Makes calls through the DataController to get data for view.
