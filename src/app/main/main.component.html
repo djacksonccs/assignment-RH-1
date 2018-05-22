@@ -1,0 +1,39 @@
+<p>
+  main Component!
+</p>
+<input type="text" [(ngModel)]="searchString" placeholder="Search..." />
+<div>
+  <button (click)="onSearchButtonClick($event)" mat-button>Search</button>
+  <button (click)="onClearButtonClick($event)" mat-button>Clear</button>
+</div>
+
+
+<div class="searchResults">
+  <div class="total">Total Number Of Results: {{ userSearchResult.total_count }}</div>
+  <div *ngFor="let item of userSearchResult.items | slice:0:maxNumberOfResults;">
+    <div class="card card-body bg-light mb-3">
+      <h3>Login: {{ item.login }}</h3>
+      <div>Id: {{ item.id }}</div>
+      <div>Avatar Url: {{ item.avatar_url }}</div>
+      <div>Gravatar Id: {{ item.gravatar_id }}</div>
+      <div>Url: {{ item.url }}</div>
+      <div>Html Url: {{ item.html_url }}</div>
+      <div>Followers Url: {{ item.followers_url }}</div>
+      <div>Following Url: {{ item.following_url }}</div>
+      <div>Gists Url: {{ item.gists_url }}</div>
+      <div>Starred Url: {{ item.starred_url }}</div>
+      <div>Subscriptions Url: {{ item.subscriptions_url }}</div>
+      <div>Organizations Url: {{ item.organizations_url }}</div>
+      <div>Repos Url: {{ item.repos_url }}</div>
+      <div>Events Url: {{ item.events_url }}</div>
+      <div>Received Events Url: {{ item.received_events_url }}</div>
+      <div>Type: {{ item.type }}</div>
+      <div>Is Site Admin: {{ item.site_admin }}</div>
+      <div>Score: {{ item.score }}</div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <p>{{errorMessage}}</p>
+</div>
