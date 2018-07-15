@@ -19,6 +19,10 @@ class DataController {
 
     constructor(private _http: HttpClient) { }
 
+    public addingTestMethod() {
+        console.log('Test!');
+    }
+
     public readUsersWithSearchString(searchStr: string) {
         console.log("Info: Search Users with Search String: " + searchStr);
         var result: Result = new Result(); // Result Object to describe the success of action.  If an error occurs a message can be passed with object.
